@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <form method="post" action="/login">
+        <h1> Login</h1>
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button>Login</button>
+    </form>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+
+        }
+       
+        form{
+            max-width: 500px;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            transform: translate(0,30%);
+            /* box-sizing:; */
+        }
+        input,button{
+            margin: 10px;
+            padding: 5px;
+        }
+        h1,h2{
+            margin: 0 auto;
+            font-size: 1.5rem;
+        }
+        p{
+            text-align: center;
+        }
+        .db{
+            /* max-width: 500px; */
+            display: grid;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            /* transform: translate(0,60%); */
+            /* box-sizing:; */
+        }
+       .options{
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        text-decoration: none;
+       }
+       a{
+        text-decoration: none;
+        color: black;
+       }
+    </style>
+</head>
+<body>
+    <h1>Worker</h1>
+    <div class="db">
+        <form method="post" action="/login">
+            <h2>Login</h2>
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
+            <button><b>Login</b></button>
+            <p><%= locals.message %></p>
+            <div class="options">
+                <button>
+                    <a href="register">Register</a>
+                </button>
+                <button>
+                    <a href="/">Home</a>
+                </button>
+            </div>
+        </form>
+       
+    </div>
+    
+</body>
+</html>

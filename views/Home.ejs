@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker</title>
+    <style>
+        *{
+            /* border: 1px solid white; */
+            color: white;
+            background-color: black;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            /* background-image: linear-gradient(red); */
+            background-color: black;
+            
+        }
+        .labour{
+            /* background-color: linear-gradient(red,orange); */
+            display: flex;
+            flex-direction: column;
+            width: 97vw;
+            font-size: 20px;
+            background-color: rgba(0,0,0,0.5);
+            margin: 10px;
+            padding: 5px;
+            border: 3px black solid;
+            color: beige;
+            border-radius: 10px;
+        }
+        
+        h1{
+            margin: 5px;
+            padding: 10px;
+            font-size: 2rem;
+        }
+        h2{
+            margin: 5px;
+            padding: 10px;
+            font-size: 5vh;
+        }
+        #fetchKamgarBtn{
+            border: none;
+            padding: 5px;
+            margin: 10px;
+            font-size: 3vh;
+            background-color: black;
+            transition:transform 0.5s ;
+        }
+        #fetchKamgarBtn:hover{
+            color: rgb(200,200,200);
+            background-color: black;
+            transform: scale(1.1);
+        }
+       
+        #content{
+            background-color: rgba(0,0,0,0.5);
+
+        }
+        #con{
+            /* position: sticky; */
+            display: grid;
+            /* flex-direction: column; */
+            grid-template-columns: 170px 1fr;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            /* padding: 10px; */
+            margin: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+        .nav{
+            display: grid;
+            grid-template-columns: 1.5fr 0.5fr;
+            
+            color: aliceblue;
+            background-color: black;
+        }
+        .login, .register{
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: aliceblue;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            transition: transform .5s;
+        }
+        .main{
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .register:hover, .login:hover{
+            transform: translate(0,-10px);
+        }
+        .option{
+            justify-content: center;
+            gap: space-between;
+            width: 200px;
+            float: left;
+        }
+        .banner{
+            font-size: 5rem;
+            }
+        span{
+            font-size: 7rem;
+        }
+        /* marquee{
+            height: 500px;
+        } */
+    </style>
+</head>
+<body>
+    <main class="main"> 
+        <nav class="nav">
+            <h1>worker.com</h1>
+            <div class="option">
+                <a href="register" class="register">Register</a>
+                <a href="login" class="login">Login</a>
+            </div>
+        </nav>
+        <marquee behavior="" direction="right">>>>>></marquee>
+        <marquee behavior="" direction="left side"><<<<<</marquee>
+        <h2>worker Available</h2>
+        <button id="fetchKamgarBtn">Fetch Data</button>
+        <marquee behavior="alternate" direction="right">...............</marquee>
+        <p class="banner"><span>T</span>his site will help you pick a work force real Quickly from comfort of your home</p>
+        <marquee behavior="alternate" direction="side">...............</marquee>
+        <div id="content">
+            <div id="con">
+        
+            </div>
+        </div>
+    </main>
+    <script>
+        const con = document.getElementById('con');
+        const fetchKamgarBtn = document.getElementById('fetchKamgarBtn');
+        
+        fetchKamgarBtn.addEventListener('click',async()=>{
+            await showProfile(labour);
+        });
+
+
+        const labour=[
+        // {  
+        //     LName:"Durgadas",
+        //     Lmiddlename:"Haridas",
+        //     Llastname:"Dhoke",
+        //     contact:"7774929109",
+        //     skill:["Dukan","elctric work","driving tractor"],
+        //     photo:"",
+        //     address:{
+        //         village:"",
+        //         tahsil:"",
+        //         city:"",
+        //         state:"",
+        //         pin:""
+        //     },
+        //     adharNumber:"6621 5447 8152",
+        //     pan:"DHJDH4728D",
+        //     email:"daurdfaf@gmail.com+",
+        //     available:true
+        // },
+        // {
+        //     LName:"kiran Dhoke",
+        //     contact:"77894929109",
+        //     Skill:"dukan",
+        //     address:"At post Jaulka Rly",
+        //     available:true
+        // },
+        // {
+        //     LName:"Roah Dhoke",
+        //     contact:"77878529109",
+        //     Skill:"dukan",
+        //     address:"At post Jaulka Rly",
+        //     available:false
+        // }
+        
+    ];
+
+    let strstr = '';
+
+    function showProfile(){
+        alert("Login First");
+       window.location.href = window.location.href +'login';
+        // if(strstr === '')
+        // {
+
+        //     for(i of labour)
+        //     {
+        //         if(i.available === true)
+        //         {
+        //             let str =  `
+        //             <a href="kamgarProfile.html">
+        //                 <img src="dsa.jpg" alt="Your photo">
+        //             </a>
+        //             <div class="labour">
+        //             <label for="">Name    :${i.LName}</label>
+        //             <label for="">Contact :${i.contact}</label>
+        //             <label for="">Skill        :${i.Skill}</label>
+        //             <label for="">Address :${i.address}</label>
+        //             </div>`;
+                    
+        //             strstr += str;
+        //         }
+    
+        //     }
+        // }
+
+        // con.innerHTML = strstr;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker</title>
+    <style>
+         *{
+            /* border: 1px solid white; */
+            color: white;
+            background-color: black;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            /* background-image: linear-gradient(red); */
+            background-color: black;
+        }
+        .labour{
+            /* background-color: linear-gradient(red,orange); */
+            display: flex;
+            flex-direction: column;
+            width: 97vw;
+            font-size: 20px;
+            background-color: rgba(0,0,0,0.5);
+            margin: 10px;
+            padding: 5px;
+            border: 3px black solid;
+            color: beige;
+            border-radius: 10px;
+        }
+        
+        h1{
+            margin: 5px;
+            padding: 10px;
+            font-size: 2rem;
+        }
+        h2{
+            margin: 5px;
+            padding: 10px;
+            font-size: 5vh;
+        }
+        #fetchKamgarBtn{
+            border: none;
+            padding: 5px;
+            margin: 10px;
+            font-size: 3vh;
+            background-color: black;
+            transition:transform 0.5s ;
+        }
+        #fetchKamgarBtn:hover{
+            color: rgb(200,200,200);
+            background-color: black;
+            transform: scale(1.1);
+        }
+       
+        #content{
+            background-color: rgba(0,0,0,0.5);
+
+        }
+        #con{
+            /* position: sticky; */
+            display: grid;
+            /* flex-direction: column; */
+            grid-template-columns: 170px 1fr;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            /* padding: 10px; */
+            margin: 5px;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+        .nav{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+            color: aliceblue;
+            background-color: black;
+        }
+        .btn{
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: aliceblue;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            transition: transform .5s;
+        }
+        .main{
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .btn:hover{
+            transform: translate(0,-10px);
+        }
+        .options{
+            justify-content: center;
+            gap: space-between;
+            /* width: 00px; */
+            float: left;
+            }
+    </style>
+</head>
+<body>
+    <main class="main"> 
+        <nav class="nav">
+            <h1>worker.com</h1>
+            <div class="options">
+                <a class="btn">Hi  <%= locals.username%></a>
+                <a href="profile" class="btn">Profile</a>
+                <a href="logout" class="btn">Logout</a>
+                <!-- <a href="logout" class="login">Logout</a> -->
+            </div>
+
+        </nav>
+    <h2>People Available</h2>
+    <!-- dorpdown list -->
+    <form action="/getworker">
+
+    <label for="cars">Choose a Category:</label>
+        <select name="skill" id="cars">
+        <option value="Shet majoor">Shet majoor</option>
+        <option value="dukan">dukan</option>
+        <option value="tractor driver">tractor driver</option>
+        <option value="jcb driver">jcb driver</option>
+        <option value="elctrician">elctrician</option>
+        <option value="car driver">car driver</option>
+        <option value="painter">painter</option>
+        <option value="photographer">photographer</option>
+        <option value="dj">dj</option>
+        </select>
+        <button type="submit" id="fetchKamgarBtn">Fetch Data</button>
+    </form>
+
+    <div id="content">
+        <div id="con">
+    
+        </div>
+    </div>
+    </main>
+</body>
+</html>

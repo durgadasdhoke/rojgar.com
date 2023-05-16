@@ -1,0 +1,83 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+</head>
+<body>
+    <form method="post" action="/register">
+        <h1> Register</h1>
+        <input type="text" placeholder="Username" name="username">
+        <input type="password" placeholder="Password" name="password">
+        <button>Register</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+         body{
+            background-color: black;
+            color: white;
+        }
+        form{
+            max-width: 500px;
+            display: flex;
+            margin: 0 auto;
+            flex-direction: column;
+            transform: translate(0,50%);
+            /* box-sizing:; */
+        }
+        input,button{
+            margin: 10px;
+            padding: 5px;
+        }
+        h1,h2{
+            margin: 0 auto;
+            font-size: 1.5rem;
+        }
+        .options{
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    text-decoration: none;
+   }
+   a{
+    text-decoration: none;
+    color: black;
+   }
+    </style>
+</head>
+<body>
+    <h1>Fakebook</h1>
+    <form method="post" action="/register">
+        <h2>Register</h2>
+        <input type="text" name="username" placeholder="Username">
+        <input type="text" name="password" placeholder="Password">
+        <button><b>Register</b></button>
+        <div class="options">
+            <button>
+                <a href="login">Login</a>
+            </button>
+            <button>
+                <a href="/">Home</a>
+            </button>
+        </div>
+    </form>
+    <script>
+        const formsubmitted = ()=>{
+            body.innerHtml = ``;
+        };
+    </script>
+</body>
+</html>
