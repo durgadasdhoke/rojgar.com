@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';//This is a middleware
 import jwt from 'jsonwebtoken';
+import path from 'path';
 
 // moongoose steps
 // import mongoose
@@ -31,6 +32,7 @@ app.set("view engine","ejs");
 
 // Middleware Added
 app.use(express.urlencoded({ extended:true }));
+app.set("views", path.join(path.resolve(), "views"));
 app.set('views','./views');
 app.use(cookieParser());
 // authentication function
