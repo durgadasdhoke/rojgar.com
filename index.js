@@ -31,6 +31,7 @@ app.set("view engine","ejs");
 
 // Middleware Added
 app.use(express.urlencoded({ extended:true }));
+app.set('views','./views');
 app.use(cookieParser());
 // authentication function
 const isAuthenticated = async(req,res,next)=>{
