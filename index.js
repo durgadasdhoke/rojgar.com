@@ -68,7 +68,7 @@ app.get('/profile',async(req,res)=>{
         res.render('profile');
 
     }else{
-        res.render('login');
+        res.render('Login');
     }
 });
 
@@ -76,7 +76,7 @@ app.post('/register',async(req,res)=>{
     // This will create New user in the Database called Backend In this case
     const {username, password} = req.body;
     await user.create({username, password});
-    res.render('login');
+    res.render('Login');
 });
 
 app.get('/login',async(req,res)=>{
@@ -87,7 +87,7 @@ app.get('/login',async(req,res)=>{
         req.user = await user.findById(decoded._id);  
         res.render('Homelogout',{username:req.user.username});
     }else{
-        res.render('login');
+        res.render('Login');
     }
 });
 
@@ -96,7 +96,7 @@ app.get('/logout',(req,res)=>{
         expires:new Date(Date.now()),
         httpOnly:true
     });
-    res.render('login');
+    res.render('Login');
 });
 
 app.post('/login',async(req,res)=>{
@@ -104,7 +104,7 @@ app.post('/login',async(req,res)=>{
      const userData = await user.findOne({username});
      if(!userData)
      {
-        res.render('login',{message:"Please Check Username or Kindly Register yourself "});
+        res.render('Login',{message:"Please Check Username or Kindly Register yourself "});
      } 
      else{
         if(userData.password === password)
@@ -113,7 +113,7 @@ app.post('/login',async(req,res)=>{
             res.cookie("token",token);
             res.render('Homelogout',{username: username});
         }else{
-          res.render('login',{message:"Wrong Password"});   
+          res.render('Login',{message:"Wrong Password"});   
         }
     }
 });
