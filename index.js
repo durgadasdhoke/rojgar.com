@@ -4,12 +4,6 @@ import cookieParser from 'cookie-parser';//This is a middleware
 import jwt from 'jsonwebtoken';
 import path from 'path';
 
-// moongoose steps
-// import mongoose
-// use mongoose.connect method to connect to the Database params url(string), {dbName:}can use .then method to estblished the connection
-// then create Schema
-// then create model
-// do the operation like create and find
 mongoose.connect('mongodb+srv://durgadasdhoke:7L3r3pFZoWQQM6Ma@cluster0.odc8qqo.mongodb.net/',{
   dbName:"worker"
 }).then(()=>{
