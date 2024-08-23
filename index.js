@@ -4,7 +4,7 @@ import cookieParser from 'cookie-parser';//This is a middleware
 import jwt from 'jsonwebtoken';
 import path from 'path';
 
-mongoose.connect('mongodb+srv://durgadasdhoke:7L3r3pFZoWQQM6Ma@cluster0.odc8qqo.mongodb.net/',{
+mongoose.connect('mongodb+srv://durgadasdhoke:jh-w3quhZmkRN.3@cluster0.odc8qqo.mongodb.net/',{
   dbName:"worker"
 }).then(()=>{
     console.log('Connection Established');
@@ -41,9 +41,7 @@ const isAuthenticated = async(req,res,next)=>{
         res.render('Home');
     }
 } ;
-// We can call below syntax an api or route depending on what it is doing in the code 
-// 1st if it is just rendering a page then its just a route
-// 2nd if it is sender data (pure data) then its API
+
 app.get('/',isAuthenticated,async (req,res)=>{
     console.log(req.user);
     res.render('Homelogout',{username:req.user.username});
