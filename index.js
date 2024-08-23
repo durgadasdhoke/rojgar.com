@@ -44,7 +44,7 @@ const isAuthenticated = async(req,res,next)=>{
 
 app.get('/',isAuthenticated,async (req,res)=>{
     console.log(req.user);
-    res.render('Homelogout',{username:req.user.username});
+    res.render('Home',{username:req.user.username});
 } );
 
 app.get('/register',(req,res)=>{
